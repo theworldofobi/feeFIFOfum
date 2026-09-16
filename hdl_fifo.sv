@@ -19,7 +19,7 @@ module hdl_fifo #(
   // extra MSB to tell the difference btw full and empty
   localparam PTR_WIDTH = $clog2(DEPTH);
   logic [PTR_WIDTH:0] wr_ptr, rd_ptr; 
-  logic [WIDTH-1:0] mem [DEPTH-1:0];
+  logic [WIDTH-1:0] mem [0:DEPTH-1];
 
   always_ff @(posedge clk) begin
     if (!rst_n) begin
