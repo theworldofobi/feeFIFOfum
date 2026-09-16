@@ -23,9 +23,9 @@ module hdl_fifo #(
 
   always_ff @(posedge clk) begin
     if (!rst_n) begin
-      wr_ptr <= 0;
-      rd_ptr <= 0;
-      dout   <= 0;
+      wr_ptr <= '0;
+      rd_ptr <= '0;
+      dout   <= '0;
     end else begin
       // writing (can't be full first)
       if (wr_en && !full) begin
